@@ -1,6 +1,6 @@
 # Traffic_Light_Controller_Verilog
 
-#🚦 Traffic Light Controller (Verilog FSM)
+# 🚦 Traffic Light Controller (Verilog FSM)
 
 This project implements a Traffic Light Controller using a Finite State Machine (FSM) in Verilog. The design simulates the behavior of a real-world traffic signal by cycling through three states: Red, Green, and Yellow, each with a defined time duration.
 
