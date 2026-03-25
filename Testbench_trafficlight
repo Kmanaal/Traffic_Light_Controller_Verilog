@@ -1,0 +1,38 @@
+`timescale 1ns/1ps
+
+module tb_traffic_light1;
+
+reg clk;
+reg reset;
+wire [2:0] light;
+
+// Instantiate DUT
+trafficlight_control uut (
+    .clk(clk),
+    .reset(reset),
+    .light(light)
+);
+
+// Clock generation (10ns period)
+always #5 clk = ~clk;
+
+initial begin
+    // Initialize
+    clk = 0;
+    reset = 1;
+
+    // Apply reset
+    #10 reset = 0;
+
+    // Run simulation
+    #200;
+
+    $stop;
+end
+
+// Monitor output
+initial begin
+    $monitor("Time=%0t | Light = %b (R Y G)", $time, light);
+end
+
+endmodule
